@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './index.css';
-import { CardFood, Navbar, Searchbar } from '../../components';
+import { CardFood, Searchbar } from '../../components';
 import { Link } from 'react-router-dom';
 import { getMealFromSearching } from '../../service/food';
 
@@ -10,7 +10,6 @@ const Index = () => {
 
   return (
     <div className='container'>
-      <Navbar />
       <Searchbar
         searchValue={searchValue}
         setSearchValue={setSearchValue}
@@ -18,7 +17,7 @@ const Index = () => {
       />
       <div className='food-container'>
         {meals.map((meal) => (
-          <Link to={`/recipes/:${meal.id}`}>
+          <Link to={`/recipes/${meal.id}`}>
             <CardFood name={meal.name} img={meal.img} />
           </Link>
         ))}
