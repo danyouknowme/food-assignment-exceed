@@ -1,5 +1,5 @@
 .card-food-container {
-  width: 270px;
+  width: 250px;
   height: 300px;
   display: flex;
   background-color: white;
@@ -9,15 +9,17 @@
 
 .card-food-container img {
   border-radius: 10px 10px 0 0;
-  flex: 3;
-  object-fit: cover;
+  height: 75%;
+  /* object-fit: cover; */
 }
 
 .card-food-container h4 {
   font-family: 'Roboto', sans-serif;
-  flex: 1;
+  height: 25%;
+  width: 80%;
+  font-size: 1.2rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.2rem;
+  margin: 0 auto;
 }
