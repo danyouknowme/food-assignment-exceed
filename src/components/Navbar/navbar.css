@@ -4,6 +4,11 @@
   display: flex;
   align-items: center;
   padding: 0 100px;
+  background-color: rgb(237, 210, 99);
+}
+
+.nav-container a {
+  text-decoration: none;
 }
 
 .nav-container h3 {
