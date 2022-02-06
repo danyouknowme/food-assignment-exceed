@@ -1,0 +1,23 @@
+.card-food-container {
+  width: 270px;
+  height: 300px;
+  display: flex;
+  background-color: white;
+  flex-direction: column;
+  border-radius: 10px;
+}
+
+.card-food-container img {
+  border-radius: 10px 10px 0 0;
+  flex: 3;
+  object-fit: cover;
+}
+
+.card-food-container h4 {
+  font-family: 'Roboto', sans-serif;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+}
