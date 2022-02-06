@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import './card-food-detail.css';
 import { MdCheckBox } from 'react-icons/md';
 import { useParams } from 'react-router-dom';
-import axios from 'axios';
+import { getMealFromId } from '../../service/food';
 
 const CardFoodDetail = () => {
   const { recipeId } = useParams();
@@ -14,25 +14,7 @@ const CardFoodDetail = () => {
   const [measure, setMeasure] = useState([]);
 
   useEffect(() => {
-    const getData = async () => {
-      await axios
-        .get(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${recipeId}`)
-        .then((response) => {
-          const data = response.data.meals[0];
-          setMeal({
-            name: data.strMeal,
-            img: data.strMealThumb,
-          });
-          for (const [key, value] of Object.entries(data)) {
-            if (key.includes('Ingredient') && value) {
-              setIngredients((prev) => [...prev, value]);
-            } else if (key.includes('Measure') && value) {
-              setMeasure((prev) => [...prev, value]);
-            }
-          }
-        });
-    };
-    getData();
+    getMealFromId(recipeId, setMeal, setIngredients, setMeasure);
   }, []);
 
   return (
@@ -48,24 +30,6 @@ const CardFoodDetail = () => {
               {measure[index]} {ingredient}
             </span>
           ))}
-          {/* <span>
-            <MdCheckBox />1 tbsp olive oil
-          </span>
-          <span>
-            <MdCheckBox />1 tbsp olive oil
-          </span>
-          <span>
-            <MdCheckBox />1 tbsp olive oil
-          </span>
-          <span>
-            <MdCheckBox />1 tbsp olive oil
-          </span>
-          <span>
-            <MdCheckBox />1 tbsp olive oil
-          </span>
-          <span>
-            <MdCheckBox />1 tbsp olive oil
-          </span> */}
         </div>
       </div>
     </div>
