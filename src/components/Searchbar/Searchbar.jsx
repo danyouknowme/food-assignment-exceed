@@ -1,10 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { FaSearch } from 'react-icons/fa';
 import './searchbar.css';
 
-const SeachBar = () => {
-  const [meal, setMeal] = useState('');
-
+const SeachBar = ({ searchValue, setSearchValue, onSubmit }) => {
   return (
     <div className='search-container'>
       <div className='search-wrapper'>
@@ -12,10 +10,10 @@ const SeachBar = () => {
         <input
           type='text'
           placeholder='Search for Meal...'
-          value={meal}
-          onChange={(e) => setMeal(e.target.value)}
+          value={searchValue}
+          onChange={(e) => setSearchValue(e.target.value)}
         />
-        <button>Search</button>
+        <button onClick={onSubmit}>Search</button>
       </div>
     </div>
   );
