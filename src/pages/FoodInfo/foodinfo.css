@@ -1,0 +1,5 @@
+.card-food-info-container {
+  width: 100vw;
+  min-height: calc(100vh - 100px);
+  background-color: rgb(237, 210, 99);
+}
