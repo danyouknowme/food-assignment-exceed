@@ -1,0 +1,19 @@
+.container {
+  background-color: rgb(237, 210, 99);
+  min-height: 100vh;
+  width: 100vw;
+}
+
+.food-container {
+  height: 100%;
+  padding: 0 100px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 3rem;
+  padding-bottom: 3rem;
+}
+
+.food-container a {
+  text-decoration: none;
+  color: inherit;
+}
