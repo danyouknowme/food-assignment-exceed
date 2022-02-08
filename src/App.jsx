@@ -10,6 +10,7 @@ const App = () => {
       <Routes>
         <Route path='/recipes' element={<Index />}></Route>
         <Route path='/recipes/:recipeId' element={<FoodInfo />}></Route>
+        <Route path='*' element={<Index />}></Route>
       </Routes>
     </div>
   );
