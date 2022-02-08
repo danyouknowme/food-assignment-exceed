@@ -16,4 +16,10 @@
 .food-container a {
   text-decoration: none;
   color: inherit;
+  display: inline-block;
+  transition: all 0.2s ease-in-out;
+}
+
+.food-container a:hover {
+  transform: scale(1.05);
 }
