@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './index.css';
 import { CardFood, Searchbar } from '../../components';
 import { Link } from 'react-router-dom';
@@ -18,6 +18,10 @@ const Index = () => {
       });
     });
   };
+
+  useEffect(() => {
+    onGetMeals(searchValue);
+  }, [searchValue]);
 
   return (
     <div className='container'>
